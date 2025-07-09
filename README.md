@@ -155,10 +155,21 @@
 > 
 > 首次使用需要进行账户验证，验证邮件已发送到您的邮箱。
 
+
+正常文本段落
+
+    这是缩进式代码块
+    每行前面有四个空格
+    保持代码的原始格式
+    
+继续正常文本
+
 ## 试一试代码的使用
 
 小的代码`int main()`  `return 0`
 感觉很吊的样子
+
+### C++
 
 ``` C++
 #include <iostream>
@@ -182,6 +193,64 @@ int main(){
 }
 ```
 
+### JavaScript
+
+```javascript
+const users = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 }
+];
+
+const adults = users.filter(user => user.age >= 18);
+console.log(adults);
+```
+
+### Python
+
+```python
+def calculate_area(radius):
+    """计算圆的面积"""
+    import math
+    return math.pi * radius ** 2
+
+# 使用函数
+area = calculate_area(5)
+print(f"圆的面积是: {area:.2f}")
+```
+
+### SQL
+
+```sql
+SELECT u.name, u.email, COUNT(o.id) as order_count
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
+WHERE u.created_at >= '2024-01-01'
+GROUP BY u.id, u.name, u.email
+ORDER BY order_count DESC
+LIMIT 10;
+```
+
+### 有行号的代码块
+
+```javascript {.line-numbers}
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10));
+```
+
+以及
+
+```javascript showLineNumbers
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(x => x * 2);
+const sum = doubled.reduce((a, b) => a + b, 0);
+console.log(`总和: ${sum}`);
+```
+
+
 ## 来个分割线玩玩
 
 ***
@@ -189,6 +258,173 @@ int main(){
 ## ZZY的超链接测试
 
 [ZZY的NJUGit仓库超链接地址](https://git.nju.edu.cn/DavidChou/college_for_zzy)
+
+这是一个链接 [菜鸟教程](https://www.runoob.com)
+欢迎访问 [GitHub](https://github.com) 官网
+这是 [百度搜索](https://www.baidu.com "百度一下，你就知道")
+
+这个链接用 1 作为网址变量 [Google][1]
+这个链接用 runoob 作为网址变量 [Runoob][runoob]
+然后在文档的结尾为变量赋值（网址）
+
+  [1]: http://www.google.com/
+  [runoob]: http://www.runoob.com/
+
+markdown 我喜欢使用 [GitHub][] 来管理代码。
+
+[GitHub]: https://github.com
+
+markdown# 学习资源推荐
+
+## 在线教程
+- [MDN Web Docs][mdn] - 权威的 Web 技术文档
+- [RUNOOB][rnb] - 适合初学者的教程网站
+- [freeCodeCamp][fcc] - 免费的编程学习平台
+
+## 代码托管
+- [GitHub][github] - 最受欢迎的代码托管服务
+- [GitLab][gitlab] - 企业级的代码管理平台
+
+<!-- 链接定义区域 -->
+[mdn]: https://developer.mozilla.org/
+[rnb]: https://www.runoob.com/
+[fcc]: https://www.freecodecamp.org/
+[github]: https://github.com/
+[gitlab]: https://gitlab.com/
+
+markdown直接输入网址：https://www.example.com
+用尖括号包围：<https://www.example.com>
+
+markdown联系邮箱：example@email.com
+或者：<example@email.com>
+
+## 目录
+- [第一章：介绍](#第一章介绍)
+- [第二章：安装](#第二章安装)
+- [第三章：使用方法](#第三章使用方法)
+
+# 第一章：介绍
+这里是介绍内容...
+
+# 第二章：安装
+这里是安装说明...
+
+# 第三章：使用方法
+这里是使用说明...
+
+<a id="custom-anchor"></a>
+## 自定义锚点位置
+
+[跳转到自定义位置](#custom-anchor)
+
+
+[回到顶部](#)
+
+![RUNOOB 图标](https://static.jyshare.com/images/runoob-logo.png)
+
+![RUNOOB 图标](https://static.jyshare.com/images/runoob-logo.png "RUNOOB")
+
+这个链接用 1 作为网址变量 [RUNOOB][1].
+然后在文档的结尾为变量赋值（网址）
+
+[1]: https://static.jyshare.com/images/runoob-logo.png
+
+
+![Unsplash 图片](https://images.unsplash.com/photo-1506905925346-21bda4d32df4)
+
+<!-- 项目徽章 -->
+[![Build Status](https://travis-ci.org/user/repo.svg?branch=master)](https://travis-ci.org/user/repo)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+<!-- 应用商店下载 -->
+[![App Store](./images/app-store-badge.png)](https://apps.apple.com/app/your-app)
+[![Google Play](./images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.yourapp)
+
+$$
+\begin{Bmatrix}
+   a & b \\
+   c & d
+\end{Bmatrix}
+$$
+$$
+\begin{CD}
+   A @>a>> B \\
+@VbVV @AAcA \\
+   C @= D
+\end{CD}
+$$
+
+```mermaid
+graph LR
+A[方形] -->B(圆角)
+    B --> C{条件a}
+    C -->|a=1| D[结果1]
+    C -->|a=2| E[结果2]
+    F[横向流程图]
+```
+
+```mermaid
+%% 语法示例
+        gantt
+        dateFormat  YYYY-MM-DD
+        title 软件开发甘特图
+        section 设计
+        需求                      :done,    des1, 2014-01-06,2014-01-08
+        原型                      :active,  des2, 2014-01-09, 3d
+        UI设计                     :         des3, after des2, 5d
+    未来任务                     :         des4, after des3, 5d
+        section 开发
+        学习准备理解需求                      :crit, done, 2014-01-06,24h
+        设计框架                             :crit, done, after des2, 2d
+        开发                                 :crit, active, 3d
+        未来任务                              :crit, 5d
+        耍                                   :2d
+        section 测试
+        功能测试                              :active, a1, after des3, 3d
+        压力测试                               :after a1  , 20h
+        测试报告                               : 48h
+```
+```mermaid
+%% 时序图例子,-> 直线，-->虚线，->>实线箭头
+  sequenceDiagram
+    participant 张三
+    participant 李四
+    张三->王五: 王五你好吗？
+    loop 健康检查
+        王五->王五: 与疾病战斗
+    end
+    Note right of 王五: 合理 食物 <br/>看医生...
+    李四-->>张三: 很好!
+    王五->李四: 你怎么样?
+    李四-->王五: 很好!
+```
+$$
+    \begin{align}
+    f(x) &= ax^2 + bx + c \\
+    f'(x)  &= 2ax + b \\
+    f''(x)  &= 2a
+    \end{align}
+    $$
+
+```mermaid
+sequenceDiagram
+    participant A as 用户
+    participant B as 系统
+    participant C as 数据库
+    
+    A->>B: 登录请求
+    B->>C: 验证用户信息
+    C-->>B: 返回验证结果
+    B-->>A: 登录成功/失败
+    note over B: 登录成功
+```
+
+
+
+
+
+
+
 
 嘿嘿嘿，还挺好玩
 
